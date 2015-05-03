@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css">
+
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-material/angular-material.js"></script>
+    <script src="../bower_components/firebase/firebase.js"></script>
+    <script src="../bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script src="toDo.js"></script>
+
+</head>
+
+<body ng-app="myFirebaseApp">
+
+<div ng-controller="myForm">
+
+    <h1 style="text-align: center;">Dynamic To Do App</h1>
+
+    <md-input-container flex>
+        <label>First name</label>
+        <input ng-model="validName">
+    </md-input-container>
+    <md-button class="md-raised md-primary" ng-click="addvalue()">Add To Do</md-button>
+
+    <!--<md-checkbox ng-repeat="sa in messages" aria-label="Checkbox 1">
+        {{ sa.name}}
+    </md-checkbox>-->
+
+    <ul>
+        <li ng-repeat="message in messages">
+            <p>{{message.name}}</p>
+            <md-button class="md-raised md-warn" ng-click="messages.$remove(message)">Remove To Do</md-button>
+        </li>
+    </ul>
+</div>
+
+<!--
+<md-checkbox ng-repeat="sa in no1">
+    {{sa}}
+</md-checkbox>-->
+</body>
+</html>
+
